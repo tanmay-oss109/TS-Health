@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TS Health - Your everyday companion for wellness, nutrition, fitness and healthy living.">
+<title>TS Health | Live Well, Every Day</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --emerald: #087f5b;
+  --emerald-dark: #075c45;
+  --emerald-deep: #063d31;
+  --mint: #dff7ed;
+  --mint-strong: #b9edd8;
+  --lime: #c8f169;
+  --cream: #f7fbf8;
+  --white: #ffffff;
+  --charcoal: #17221e;
+  --muted: #65736d;
+  --border: #e1ebe5;
+  --shadow: 0 16px 50px rgba(7, 78, 55, 0.09);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo, .nav-link {
+  font-family: 'Poppins', sans-serif;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: auto;
+}
+
+/* ---------- TOP CREDIT BAR ---------- */
+
+.credit-bar {
+  background: var(--emerald-deep);
+  color: #e5fff3;
+  text-align: center;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--emerald-dark);
+  white-space: nowrap;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 13px;
+  background: var(--emerald);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+  box-shadow: 0 7px 18px rgba(8,127,91,0.2);
+}
+
+.logo span {
+  color: var(--charcoal);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  list-style: none;
+}
+
+.nav-link {
+  border: none;
+  background: transparent;
+  padding: 10px 13px;
+  border-radius: 10px;
+  color: #56645e;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--emerald);
+  background: var(--mint);
+}
+
+.nav-cta {
+  border: none;
+  background: var(--emerald);
+  color: white;
+  padding: 12px 19px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.nav-cta:hover {
+  background: var(--emerald-dark);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  background: var(--mint);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  font-size: 22px;
+  color: var(--emerald-dark);
+}
+
+/* ---------- PAGE SYSTEM ---------- */
+
+.page {
+  display: none;
+  animation: pageFade .35s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- COMMON ELEMENTS ---------- */
+
+.section {
+  padding: 90px 0;
+}
+
+.section-sm {
+  padding: 65px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--emerald);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-bottom: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 3px;
+  border-radius: 4px;
+  background: var(--lime);
+}
+
+.section-heading {
+  max-width: 660px;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 570px;
+}
+
+.btn {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 22px;
+  border-radius: 13px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--emerald);
+  color: white;
+  box-shadow: 0 9px 22px rgba(8,127,91,0.18);
+}
+
+.btn-primary:hover {
+  background: var(--emerald-dark);
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: white;
+  color: var(--emerald-dark);
+  border: 1px solid var(--border);
+}
+
+.btn-light:hover {
+  border-color: var(--emerald);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--emerald);
+  border: 1px solid #a8d8c3;
+}
+
+.btn-outline:hover {
+  background: var(--mint);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center .section-heading p {
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--mint);
+  color: var(--emerald-dark);
+  padding: 6px 11px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ---------- HOME HERO ---------- */
+
+.hero {
+  background:
+    radial-gradient(circle at 90% 5%, rgba(191,240,216,0.6), transparent 30%),
+    linear-gradient(135deg, #f6fcf8 0%, #e8f7ef 100%);
+  overflow: hidden;
+}
+
+.hero-inner {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.03fr .97fr;
+  align-items: center;
+  gap: 50px;
+  padding: 65px 0 75px;
+}
+
+.hero-content h1 {
+  font-size: clamp(39px, 5vw, 65px);
+  line-height: 1.08;
+  letter-spacing: -2.8px;
+  margin-bottom: 24px;
+  max-width: 650px;
+}
+
+.hero-content h1 em {
+  color: var(--emerald);
+  font-style: normal;
+  position: relative;
+}
+
+.hero-content h1 em::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 3px;
+  width: 90%;
+  height: 5px;
+  background: var(--lime);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.hero-content p {
+  color: var(--muted);
+  max-width: 500px;
+  font-size: 16px;
+  margin-bottom: 31px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 27px;
+  color: #75837d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero-note .tiny-avatars {
+  display: flex;
+}
+
+.tiny-avatar {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -6px;
+}
+
+.tiny-avatar:first-child {
+  margin-left: 0;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 500px;
+}
+
+.hero-photo {
+  height: 470px;
+  border-radius: 35px 35px 35px 100px;
+  object-position: center;
+  box-shadow: 0 25px 60px rgba(4, 74, 48, .15);
+}
+
+.hero-photo-wrap {
+  position: relative;
+  max-width: 445px;
+  margin: auto;
+}
+
+.hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -13px -13px 13px 13px;
+  border: 2px solid #b7e6ce;
+  border-radius: 35px 35px 35px 100px;
+  z-index: 0;
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  box-shadow: 0 15px 40px rgba(8, 62, 42, .13);
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 17px;
+}
+
+.health-score {
+  top: 38px;
+  left: -35px;
+  padding: 16px 18px;
+  width: 168px;
+}
+
+.health-score-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.health-icon {
+  width: 29px;
+  height: 29px;
+  background: var(--mint);
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: var(--emerald);
+  font-size: 16px;
+}
+
+.score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.score-row strong {
+  font-size: 27px;
+  color: var(--emerald-dark);
+}
+
+.score-row span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.score-bar {
+  height: 5px;
+  background: #e7eee9;
+  border-radius: 10px;
+  margin-top: 9px;
+  overflow: hidden;
+}
+
+.score-bar div {
+  height: 100%;
+  width: 82%;
+  background: var(--lime);
+  border-radius: inherit;
+}
+
+.mini-meal {
+  right: -22px;
+  bottom: 35px;
+  width: 205px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-meal img {
+  width: 58px;
+  height: 58px;
+  border-radius: 13px;
+}
+
+.mini-meal strong {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.mini-meal small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* ---------- STATS ---------- */
+
+.stats-strip {
+  background: var(--emerald-deep);
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.stat:last-child {
+  border: none;
+}
+
+.stat strong {
+  display: block;
+  font-size: 27px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--lime);
+}
+
+.stat span {
+  font-size: 11px;
+  color: #b8d8ca;
+}
+
+/* ---------- VALUES ---------- */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: .3s;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.value-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background: var(--mint);
+  border-radius: 15px;
+  font-size: 23px;
+  margin-bottom: 21px;
+}
+
+.value-card h3 {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+.value-card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- HOME WIDGETS ---------- */
+
+.home-tools {
+  background: #edf8f2;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.widget {
+  background: white;
+  border-radius: 25px;
+  border: 1px solid var(--border);
+  padding: 29px;
+  box-shadow: 0 8px 25px rgba(5, 75, 48, .03);
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.widget-header h3 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.widget-header p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tip-content {
+  background: linear-gradient(135deg, var(--emerald-deep), var(--emerald));
+  border-radius: 17px;
+  color: white;
+  padding: 23px;
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tip-label {
+  color: var(--lime);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tip-content p {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-top: 12px;
+}
+
+.tip-button {
+  margin-top: 17px;
+  background: white;
+  color: var(--emerald-dark);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.checklist {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fbf9;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #4f6058;
+  transition: .2s;
+}
+
+.checklist li.completed {
+  background: var(--mint);
+  color: var(--emerald-dark);
+  text-decoration: line-through;
+}
+
+.checklist input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--emerald);
+  cursor: pointer;
+}
+
+/* ---------- ABOUT PAGE ---------- */
+
+.page-hero {
+  background: linear-gradient(135deg, var(--emerald-deep), #0b7555);
+  color: white;
+  padding: 75px 0;
+}
+
+.page-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.page-hero h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  letter-spacing: -2px;
+  line-height: 1.12;
+  margin-bottom: 15px;
+}
+
+.page-hero p {
+  color: #c3e3d4;
+  max-width: 550px;
+  font-size: 15px;
+}
+
+.page-hero-art {
+  font-size: 100px;
+  opacity: .9;
+  line-height: 1;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-image {
+  height: 420px;
+  border-radius: 28px;
+  object-position: center;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.about-content p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.about-list li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.about-list li span {
+  background: var(--mint);
+  color: var(--emerald);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.mission-section {
+  background: #edf8f2;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mission-card {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.mission-card .number {
+  color: var(--emerald);
+  font-family: 'Poppins';
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.mission-card h3 {
+  font-size: 17px;
+  margin-bottom: 9px;
+}
+
+.mission-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- BLOG PAGE ---------- */
+
+.blog-feature {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 27px;
+  overflow: hidden;
+  margin-bottom: 45px;
+}
+
+.blog-feature img {
+  height: 350px;
+}
+
+.feature-copy {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-copy h2 {
+  font-size: 29px;
+  line-height: 1.25;
+  margin: 15px 0;
+}
+
+.feature-copy p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.blog-meta {
+  color: #819088;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.blog-card img {
+  height: 205px;
+}
+
+.blog-card-body {
+  padding: 23px;
+}
+
+.blog-card-body h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 12px 0 10px;
+}
+
+.blog-card-body p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 17px;
+}
+
+.read-more {
+  color: var(--emerald);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* ---------- RECIPES PAGE ---------- */
+
+.recipe-filter {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 30px;
+  padding: 10px 17px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: white;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.recipe-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.recipe-img-wrap {
+  position: relative;
+}
+
+.recipe-img-wrap img {
+  height: 220px;
+}
+
+.recipe-time {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(255,255,255,.95);
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--emerald-dark);
+}
+
+.recipe-body {
+  padding: 22px;
+}
+
+.recipe-body h3 {
+  font-size: 18px;
+  margin: 10px 0 6px;
+}
+
+.recipe-body p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 17px;
+}
+
+.recipe-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: #748179;
+  margin-bottom: 17px;
+}
+
+.recipe-info span {
+  background: #f1f7f3;
+  padding: 6px 9px;
+  border-radius: 7px;
+}
+
+.ingredient-toggle {
+  width: 100%;
+  border: 1px solid #bde5d0;
+  background: transparent;
+  color: var(--emerald);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ingredient-toggle:hover {
+  background: var(--mint);
+}
+
+.ingredients {
+  display: none;
+  margin-top: 15px;
+  background: #f5fbf7;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.ingredients.show {
+  display: block;
+}
+
+.ingredients h4 {
+  font-size: 12px;
+  color: var(--emerald-dark);
+  margin-bottom: 8px;
+}
+
+.ingredients ul {
+  padding-left: 17px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* ---------- FITNESS PAGE ---------- */
+
+.fitness-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: stretch;
+  margin-bottom: 45px;
+}
+
+.fitness-intro img {
+  height: 350px;
+  border-radius: 25px;
+}
+
+.fitness-intro-copy {
+  background: var(--emerald-deep);
+  color: white;
+  border-radius: 25px;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fitness-intro-copy h2 {
+  font-size: 29px;
+  line-height: 1.25;
+  margin: 13px 0;
+}
+
+.fitness-intro-copy p {
+  color: #bedbcf;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.workout-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  padding: 25px;
+}
+
+.workout-icon {
+  width: 49px;
+  height: 49px;
+  background: var(--mint);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.workout-card h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.workout-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 17px;
+}
+
+.workout-details {
+  display: flex;
+  justify-content: space-between;
+  color: #75847b;
+  font-size: 11px;
+  margin-bottom: 17px;
+}
+
+.workout-details strong {
+  color: var(--emerald);
+}
+
+.start-workout {
+  width: 100%;
+  background: #f0f8f3;
+  border: none;
+  color: var(--emerald-dark);
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.start-workout:hover {
+  background: var(--mint);
+}
+
+.workout-card.started {
+  border-color: var(--emerald);
+}
+
+.workout-card.started .start-workout {
+  background: var(--emerald);
+  color: white;
+}
+
+.fitness-tracker {
+  margin-top: 40px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 23px;
+  padding: 30px;
+}
+
+.tracker-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.tracker-top h3 {
+  font-size: 20px;
+}
+
+.tracker-top p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tracker-number {
+  font-size: 30px;
+  font-family: 'Poppins';
+  font-weight: 800;
+  color: var(--emerald);
+}
+
+.progress-track {
+  height: 12px;
+  border-radius: 20px;
+  background: #eaf1ec;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--emerald), #57bb8c);
+  border-radius: inherit;
+  transition: width .4s;
+}
+
+.tracker-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tracker-controls button {
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--emerald);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.tracker-controls button:hover {
+  background: var(--mint);
+}
+
+.tracker-controls span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- CONTACT PAGE ---------- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.contact-info {
+  background: var(--emerald-deep);
+  color: white;
+  border-radius: 25px;
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info::after {
+  content: "✦";
+  position: absolute;
+  font-size: 190px;
+  color: rgba(255,255,255,.04);
+  right: -25px;
+  bottom: -60px;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  line-height: 1.25;
+  margin: 13px 0;
+}
+
+.contact-info > p {
+  color: #bddacd;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.contact-items {
+  display: grid;
+  gap: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.contact-item .icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.1);
+  display: grid;
+  place-items: center;
+  color: var(--lime);
+}
+
+.contact-item h4 {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.contact-item p {
+  color: #b6d3c5;
+  font-size: 11px;
+  word-break: break-word;
+}
+
+.contact-form-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 35px;
+}
+
+.contact-form-box h2 {
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.contact-form-box > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #45564d;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 12px 14px;
+  outline: none;
+  color: var(--charcoal);
+  background: #fbfdfb;
+  font-size: 12px;
+  transition: .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 3px rgba(8,127,91,.08);
+}
+
+.form-group textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.form-message {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-message.show {
+  display: block;
+  background: var(--mint);
+  color: var(--emerald-dark);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  background: #052f25;
+  color: white;
+  padding: 55px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer .logo {
+  color: white;
+  margin-bottom: 17px;
+}
+
+.footer .logo span {
+  color: white;
+}
+
+.footer-about {
+  color: #a6c7b7;
+  font-size: 12px;
+  max-width: 290px;
+}
+
+.footer h4 {
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: #e5f8ed;
+}
+
+.footer ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.footer li,
+.footer li button {
+  color: #a6c7b7;
+  font-size: 12px;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
+
+.footer li button:hover {
+  color: var(--lime);
+}
+
+.footer-newsletter {
+  display: flex;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.footer-newsletter input {
+  min-width: 0;
+  width: 100%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 10px;
+  border-radius: 9px;
+  color: white;
+  font-size: 11px;
+}
+
+.footer-newsletter button {
+  background: var(--lime);
+  color: var(--emerald-deep);
+  border: none;
+  border-radius: 9px;
+  padding: 0 13px;
+  font-weight: 800;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8caf9f;
+  font-size: 11px;
+}
+
+/* ---------- TOAST ---------- */
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--emerald-deep);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: .3s;
+  z-index: 2000;
+  max-width: 310px;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 9px 8px;
+    font-size: 11px;
+  }
+
+  .nav-cta {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+
+  .hero-inner {
+    gap: 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+  }
+
+  .health-score {
+    left: -10px;
+  }
+
+  .mini-meal {
+    right: -10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 30px, 600px);
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-sm {
+    padding: 45px 0;
+  }
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 15px 25px rgba(0,0,0,.05);
+    padding: 12px 15px 18px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 55px 0 65px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(37px, 10vw, 52px);
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+    margin-top: 15px;
+  }
+
+  .hero-photo {
+    height: 370px;
+  }
+
+  .hero-photo-wrap {
+    max-width: 390px;
+  }
+
+  .health-score {
+    top: 20px;
+    left: -3px;
+  }
+
+  .mini-meal {
+    bottom: 15px;
+    right: -3px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat {
+    padding: 22px 12px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .values-grid,
+  .tools-grid,
+  .mission-grid,
+  .blog-grid,
+  .recipe-grid,
+  .workout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .widget {
+    padding: 22px;
+  }
+
+  .page-hero {
+    padding: 50px 0;
+  }
+
+  .page-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .page-hero-art {
+    display: none;
+  }
+
+  .about-intro,
+  .fitness-intro,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 29px;
+  }
+
+  .blog-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-feature img {
+    height: 260px;
+  }
+
+  .feature-copy {
+    padding: 27px;
+  }
+
+  .feature-copy h2 {
+    font-size: 24px;
+  }
+
+  .fitness-intro img {
+    height: 270px;
+  }
+
+  .fitness-intro-copy {
+    padding: 28px;
+  }
+
+  .contact-form-box,
+  .contact-info {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .toast {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .logo-mark {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .credit-bar {
+    font-size: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-photo {
+    height: 325px;
+  }
+
+  .hero-visual {
+    min-height: 355px;
+  }
+
+  .health-score {
+    transform: scale(.88);
+    transform-origin: top left;
+  }
+
+  .mini-meal {
+    transform: scale(.88);
+    transform-origin: bottom right;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===================== HOME PAGE ===================== -->
+<div id="home" class="page active">
+
+  <!-- Mandatory Credit Banner -->
+  <div class="credit-bar">
+    Pictures Credit: Made by Tanmay Singh from MMPS Srinagar
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" aria-label="TS Health Home" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <button class="nav-link active" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow">Your everyday wellness companion</div>
+          <h1>Small habits.<br><em>Better living.</em><br>Every single day.</h1>
+          <p>
+            Discover simple, practical ways to nourish your body,
+            strengthen your mind, and build a healthier lifestyle
+            that lasts.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="showPage('recipes')">Explore Healthy Recipes →</button>
+            <button class="btn btn-light" onclick="showPage('fitness')">Start Moving ♡</button>
+          </div>
+
+          <div class="hero-note">
+            <div class="tiny-avatars">
+              <img class="tiny-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="Community member">
+              <img class="tiny-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face" alt="Community member">
+              <img class="tiny-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="Community member">
+            </div>
+            <span>Simple wellness guidance for everyday life</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-wrap">
+            <img class="hero-photo"
+              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&auto=format&fit=crop&q=85"
+              alt="Healthy food and fresh vegetables">
+            <div class="floating-card health-score">
+              <div class="health-score-top">
+                <div class="health-icon">♥</div>
+                <span>Daily wellness</span>
+              </div>
+              <div class="score-row">
+                <strong>82</strong>
+                <span>/ 100</span>
+              </div>
+              <div class="score-bar"><div></div></div>
+            </div>
+            <div class="floating-card mini-meal">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=200&fit=crop" alt="Fresh salad">
+              <div>
+                <strong>Fresh & balanced</strong>
+                <small>Make healthy choices today</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-strip">
+      <div class="container stats-grid">
+        <div class="stat"><strong>6+</strong><span>Wellness categories</span></div>
+        <div class="stat"><strong>24/7</strong><span>Healthy inspiration</span></div>
+        <div class="stat"><strong>100%</strong><span>Practical guidance</span></div>
+        <div class="stat"><strong>1 step</strong><span>To begin today</span></div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The TS Health approach</div>
+          <h2>Wellness made simple, meaningful, and achievable.</h2>
+          <p>We believe a healthier life is built through small, consistent actions—not impossible routines.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🥗</div>
+            <h3>Nourish Better</h3>
+            <p>Explore balanced meals, mindful eating ideas, and simple nutrition habits that fit real life.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🧘</div>
+            <h3>Feel Better</h3>
+            <p>Support your mental well-being with calming practices, positive routines, and mindful moments.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🏃</div>
+            <h3>Move More</h3>
+            <p>Find enjoyable ways to stay active, build strength, and make movement part of your day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section home-tools">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Your daily dashboard</div>
+          <h2>One small step at a time.</h2>
+          <p>Use these quick tools to add a little more intention to your day.</p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Daily Tip -->
+          <div class="widget">
+            <div class="widget-header">
+              <div>
+                <h3>Daily Health Tip ✨</h3>
+                <p>A fresh idea for your wellness journey</p>
+              </div>
+              <span class="badge">INSPIRE</span>
+            </div>
+
+            <div class="tip-content">
+              <div class="tip-label">Today's gentle reminder</div>
+              <p id="healthTip">Drink a glass of water when you wake up to begin your day mindfully.</p>
+              <button class="tip-button" onclick="newTip()">Show another tip ↻</button>
+            </div>
+          </div>
+
+          <!-- Checklist -->
+          <div class="widget">
+            <div class="widget-header">
+              <div>
+                <h3>Daily Wellness Check</h3>
+                <p>Check off what you have completed</p>
+              </div>
+              <span class="badge" id="checkCount">0 / 5</span>
+            </div>
+
+            <ul class="checklist" id="dailyChecklist">
+              <li><input type="checkbox" onchange="updateChecklist()"> <span>Drink enough water</span></li>
+              <li><input type="checkbox" onchange="updateChecklist()"> <span>Eat a nourishing meal</span></li>
+              <li><input type="checkbox" onchange="updateChecklist()"> <span>Move your body</span></li>
+              <li><input type="checkbox" onchange="updateChecklist()"> <span>Take a mindful break</span></li>
+              <li><input type="checkbox" onchange="updateChecklist()"> <span>Get restful sleep</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===================== ABOUT PAGE ===================== -->
+<div id="about" class="page">
+
+  <div class="credit-bar">Pictures Credit: Made by Tanmay Singh from MMPS Srinagar</div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+      <nav class="nav-links" id="navLinksAbout">
+        <button class="nav-link" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link active" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--lime);">Who we are</div>
+        <h1>Healthier living<br>starts with access.</h1>
+        <p>TS Health is a wellness platform designed to make reliable, practical, and approachable health information part of everyday life.</p>
+      </div>
+      <div class="page-hero-art">🌿</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-intro">
+      <div>
+        <img class="about-image"
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&auto=format&fit=crop&q=85"
+          alt="Person practicing mindfulness outdoors">
+      </div>
+      <div class="about-content">
+        <div class="eyebrow">Our mission</div>
+        <h2>Helping you make health a daily habit.</h2>
+        <p>
+          At TS Health, we know that wellness can sometimes feel complicated.
+          Our goal is to make it easier to understand and easier to practise.
+        </p>
+        <p>
+          From nourishing recipes and movement ideas to mental wellness
+          reminders, we bring helpful inspiration into one friendly space.
+        </p>
+        <ul class="about-list">
+          <li><span>✓</span> Accessible wellness education</li>
+          <li><span>✓</span> Practical, everyday lifestyle ideas</li>
+          <li><span>✓</span> Encouragement without pressure</li>
+          <li><span>✓</span> A balanced view of health</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mission-section">
+    <div class="container">
+      <div class="section-heading text-center">
+        <div class="eyebrow">What guides us</div>
+        <h2>Our core principles</h2>
+        <p>Every part of TS Health is built around making positive choices feel possible.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="number">01</div>
+          <h3>Clarity over confusion</h3>
+          <p>We present wellness ideas in simple language so you can understand the basics and take informed next steps.</p>
+        </div>
+        <div class="mission-card">
+          <div class="number">02</div>
+          <h3>Progress over perfection</h3>
+          <p>Healthy living is not about being perfect. It is about creating sustainable habits that support your life.</p>
+        </div>
+        <div class="mission-card">
+          <div class="number">03</div>
+          <h3>Whole-person wellness</h3>
+          <p>We value nutrition, movement, rest, and mental well-being as connected parts of a balanced lifestyle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="background:var(--mint);border-radius:25px;padding:40px;text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">A note from TS Health</div>
+      <h2 style="font-size:clamp(25px,4vw,36px);max-width:700px;margin:0 auto 15px;">“Your health journey belongs to you—and every positive step matters.”</h2>
+      <p style="color:var(--muted);font-size:13px;max-width:600px;margin:auto;">Explore the platform, learn at your own pace, and choose habits that fit your needs.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== BLOG PAGE ===================== -->
+<div id="blog" class="page">
+
+  <div class="credit-bar">Pictures Credit: Made by Tanmay Singh from MMPS Srinagar</div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinksBlog">
+        <button class="nav-link" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link active" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--lime);">The wellness journal</div>
+        <h1>Ideas to help<br>you live well.</h1>
+        <p>Thoughtful articles and practical inspiration for your mind, body, and everyday routine.</p>
+      </div>
+      <div class="page-hero-art">📖</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-feature">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&auto=format&fit=crop&q=85" alt="Healthy meal preparation">
+        <div class="feature-copy">
+          <span class="badge">FEATURED · NUTRITION</span>
+          <h2>Building a balanced plate without overthinking it</h2>
+          <p>Learn how simple combinations of vegetables, protein, grains, and healthy fats can create satisfying meals.</p>
+          <div class="blog-meta">6 min read · Everyday Nutrition</div>
+          <button class="btn btn-primary" style="margin-top:22px;width:max-content;" onclick="readArticle('Balanced Plate')">Read article →</button>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div class="eyebrow">Explore the journal</div>
+        <h2>Fresh perspectives for your routine.</h2>
+        <p>Save an idea, share it with a friend, or try one small change this week.</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&auto=format&fit=crop&q=85" alt="Person exercising in a gym">
+          <div class="blog-card-body">
+            <span class="badge">FITNESS</span>
+            <h3>Why consistency matters more than intensity</h3>
+            <p>Discover how manageable movement routines can become a lasting part of your day.</p>
+            <div class="blog-meta">5 min read · Movement</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('Consistency and Fitness')">Read more →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=700&auto=format&fit=crop&q=85" alt="Person relaxing peacefully">
+          <div class="blog-card-body">
+            <span class="badge">MENTAL WELLNESS</span>
+            <h3>Making space for a calmer mind</h3>
+            <p>Small pauses, mindful breathing, and healthy boundaries can support your daily well-being.</p>
+            <div class="blog-meta">4 min read · Mindfulness</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('A Calmer Mind')">Read more →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=700&auto=format&fit=crop&q=85" alt="Healthy colorful breakfast">
+          <div class="blog-card-body">
+            <span class="badge">NUTRITION</span>
+            <h3>Easy ways to add more colour to your meals</h3>
+            <p>Use seasonal fruits and vegetables to make everyday food more varied and enjoyable.</p>
+            <div class="blog-meta">3 min read · Food & Nutrition</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('Colourful Meals')">Read more →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1505576633757-0ac1084af824?w=700&auto=format&fit=crop&q=85" alt="Fresh fruit and vegetables">
+          <div class="blog-card-body">
+            <span class="badge">LIFESTYLE</span>
+            <h3>The power of a simple morning routine</h3>
+            <p>Create a gentle start to your day with hydration, planning, and a few minutes of movement.</p>
+            <div class="blog-meta">4 min read · Daily Habits</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('Morning Routine')">Read more →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700&auto=format&fit=crop&q=85" alt="Person stretching">
+          <div class="blog-card-body">
+            <span class="badge">MOVEMENT</span>
+            <h3>Stretching: a gentle way to reconnect with your body</h3>
+            <p>Understand why comfortable stretching can be a useful part of an active lifestyle.</p>
+            <div class="blog-meta">5 min read · Flexibility</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('Stretching')">Read more →</button>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700&auto=format&fit=crop&q=85" alt="Books and a cup of tea">
+          <div class="blog-card-body">
+            <span class="badge">REST & RECOVERY</span>
+            <h3>Designing a restful evening</h3>
+            <p>Explore simple screen, light, and routine adjustments that can encourage better rest habits.</p>
+            <div class="blog-meta">4 min read · Sleep Habits</div>
+            <button class="read-more" style="border:none;cursor:pointer;margin-top:14px;" onclick="readArticle('Restful Evening')">Read more →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== RECIPES PAGE ===================== -->
+<div id="recipes" class="page">
+
+  <div class="credit-bar">Pictures Credit: Made by Tanmay Singh from MMPS Srinagar</div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinksRecipes">
+        <button class="nav-link" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link active" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--lime);">Fresh from the kitchen</div>
+        <h1>Good food.<br>Good energy.</h1>
+        <p>Discover colourful, nourishing meal ideas with simple ingredients and easy-to-follow inspiration.</p>
+      </div>
+      <div class="page-hero-art">🥑</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Recipe collection</div>
+        <h2>Meals made for real life.</h2>
+        <p>Browse the collection and tap “View ingredients” to see what goes into each idea.</p>
+      </div>
+
+      <div class="recipe-filter">
+        <button class="filter-btn active" onclick="filterRecipes('all', this)">All recipes</button>
+        <button class="filter-btn" onclick="filterRecipes('breakfast', this)">Breakfast</button>
+        <button class="filter-btn" onclick="filterRecipes('lunch', this)">Lunch</button>
+        <button class="filter-btn" onclick="filterRecipes('dinner', this)">Dinner</button>
+        <button class="filter-btn" onclick="filterRecipes('snack', this)">Snacks</button>
+      </div>
+
+      <div class="recipe-grid" id="recipeGrid">
+
+        <article class="recipe-card" data-category="breakfast">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?w=700&auto=format&fit=crop&q=85" alt="Oatmeal with berries">
+            <span class="recipe-time">⏱ 10 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">BREAKFAST</span>
+            <h3>Berry Oatmeal Bowl</h3>
+            <p>A warm, comforting bowl with oats, fruit, and a satisfying texture.</p>
+            <div class="recipe-info"><span>🌱 Vegetarian</span><span>⚡ Quick</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>½ cup rolled oats</li><li>1 cup milk or plant milk</li><li>Mixed berries</li><li>1 tsp seeds</li><li>Cinnamon to taste</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card" data-category="lunch">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&auto=format&fit=crop&q=85" alt="Colourful fresh salad">
+            <span class="recipe-time">⏱ 15 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">LUNCH</span>
+            <h3>Rainbow Power Salad</h3>
+            <p>A colourful mix of vegetables, greens, and a bright homemade dressing.</p>
+            <div class="recipe-info"><span>🥬 Fibre-rich</span><span>🌈 Colourful</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>Mixed leafy greens</li><li>Cucumber and tomatoes</li><li>Carrot and bell pepper</li><li>Chickpeas</li><li>Lemon and olive oil</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card" data-category="dinner">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700&auto=format&fit=crop&q=85" alt="Vegetable grain bowl">
+            <span class="recipe-time">⏱ 25 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">DINNER</span>
+            <h3>Garden Grain Bowl</h3>
+            <p>A nourishing bowl of grains, roasted vegetables, and a creamy topping.</p>
+            <div class="recipe-info"><span>🍚 Balanced</span><span>🌱 Plant-forward</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>Cooked quinoa or brown rice</li><li>Roasted vegetables</li><li>Spinach</li><li>Yogurt or hummus</li><li>Lemon and herbs</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card" data-category="snack">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=700&auto=format&fit=crop&q=85" alt="Fresh fruit smoothie">
+            <span class="recipe-time">⏱ 5 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">SNACK</span>
+            <h3>Green Morning Smoothie</h3>
+            <p>A refreshing blend for a quick snack or a cheerful start to your day.</p>
+            <div class="recipe-info"><span>🍌 Fruit-based</span><span>⚡ 5 minutes</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>1 banana</li><li>A handful of spinach</li><li>½ cup yogurt</li><li>½ cup water</li><li>Optional seasonal fruit</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card" data-category="breakfast">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=700&auto=format&fit=crop&q=85" alt="Avocado toast">
+            <span class="recipe-time">⏱ 12 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">BREAKFAST</span>
+            <h3>Avocado Garden Toast</h3>
+            <p>Creamy avocado on whole-grain toast with fresh herbs and vegetables.</p>
+            <div class="recipe-info"><span>🥑 Healthy fats</span><span>🌾 Whole grain</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>Whole-grain bread</li><li>Ripe avocado</li><li>Cherry tomatoes</li><li>Lemon juice</li><li>Pepper and herbs</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card" data-category="dinner">
+          <div class="recipe-img-wrap">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=700&auto=format&fit=crop&q=85" alt="Rice and vegetable meal">
+            <span class="recipe-time">⏱ 30 min</span>
+          </div>
+          <div class="recipe-body">
+            <span class="badge">DINNER</span>
+            <h3>Comfort Veggie Stir-Fry</h3>
+            <p>Colourful vegetables tossed with grains and a light, flavourful sauce.</p>
+            <div class="recipe-info"><span>🥦 Vegetable-rich</span><span>🍳 One-pan</span></div>
+            <button class="ingredient-toggle" onclick="toggleIngredients(this)">View ingredients +</button>
+            <div class="ingredients">
+              <h4>Ingredients</h4>
+              <ul><li>Broccoli and bell peppers</li><li>Carrots</li><li>Cooked rice</li><li>Garlic and ginger</li><li>Low-sodium soy sauce</li></ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== FITNESS PAGE ===================== -->
+<div id="fitness" class="page">
+
+  <div class="credit-bar">Pictures Credit: Made by Tanmay Singh from MMPS Srinagar</div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinksFitness">
+        <button class="nav-link" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link active" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--lime);">Move with purpose</div>
+        <h1>Find your<br>way to move.</h1>
+        <p>Explore beginner-friendly movement ideas and track your progress at your own pace.</p>
+      </div>
+      <div class="page-hero-art">🏃</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fitness-intro">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&auto=format&fit=crop&q=85" alt="Person doing strength training">
+        <div class="fitness-intro-copy">
+          <div class="eyebrow" style="color:var(--lime);">Your movement mindset</div>
+          <h2>Movement is a gift, not a punishment.</h2>
+          <p>Choose activities that feel comfortable and enjoyable. Start gently, listen to your body, and build consistency over time.</p>
+          <button class="btn btn-light" style="width:max-content;" onclick="showToast('Choose a routine below and begin at your own comfortable pace!')">Explore routines ↓</button>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div class="eyebrow">Workout library</div>
+        <h2>Something for every energy level.</h2>
+        <p>These sample routines are for general wellness. Adjust intensity to your abilities and stop if you experience pain or discomfort.</p>
+      </div>
+
+      <div class="workout-grid">
+        <div class="workout-card">
+          <div class="workout-icon">🌤️</div>
+          <h3>Gentle Morning Stretch</h3>
+          <p>Wake up your body with comfortable stretches and relaxed breathing.</p>
+          <div class="workout-details"><span>⏱ 8 minutes</span><strong>Beginner</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+
+        <div class="workout-card">
+          <div class="workout-icon">🚶</div>
+          <h3>Brisk Walking</h3>
+          <p>A simple cardio option that can be adapted to your pace and surroundings.</p>
+          <div class="workout-details"><span>⏱ 20 minutes</span><strong>Easy–Moderate</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+
+        <div class="workout-card">
+          <div class="workout-icon">💪</div>
+          <h3>Bodyweight Basics</h3>
+          <p>Practise controlled squats, wall push-ups, and gentle core movements.</p>
+          <div class="workout-details"><span>⏱ 15 minutes</span><strong>Beginner</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+
+        <div class="workout-card">
+          <div class="workout-icon">🧘</div>
+          <h3>Mindful Yoga Flow</h3>
+          <p>Combine slow movement, balance, and breathing in a calming sequence.</p>
+          <div class="workout-details"><span>⏱ 18 minutes</span><strong>Gentle</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+
+        <div class="workout-card">
+          <div class="workout-icon">🎵</div>
+          <h3>Dance Break</h3>
+          <p>Play your favourite music and enjoy a fun, energetic movement break.</p>
+          <div class="workout-details"><span>⏱ 10 minutes</span><strong>Fun</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+
+        <div class="workout-card">
+          <div class="workout-icon">🌳</div>
+          <h3>Outdoor Reset</h3>
+          <p>Take a relaxed walk outdoors and combine movement with fresh air.</p>
+          <div class="workout-details"><span>⏱ 25 minutes</span><strong>Easy</strong></div>
+          <button class="start-workout" onclick="startWorkout(this)">Start routine →</button>
+        </div>
+      </div>
+
+      <!-- Interactive Fitness Tracker -->
+      <div class="fitness-tracker">
+        <div class="tracker-top">
+          <div>
+            <h3>Weekly Movement Tracker</h3>
+            <p>Set a simple goal and track completed movement sessions.</p>
+          </div>
+          <div class="tracker-number"><span id="sessionCount">0</span><small style="font-size:12px;color:var(--muted);font-family:Inter;"> / 5 sessions</small></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="tracker-controls">
+          <button onclick="changeSessions(-1)" aria-label="Remove session">−</button>
+          <button onclick="changeSessions(1)" aria-label="Add session">+</button>
+          <span>Tap + after completing a movement session.</span>
+          <button class="btn btn-outline" style="margin-left:auto;padding:9px 13px;" onclick="resetSessions()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== CONTACT PAGE ===================== -->
+<div id="contact" class="page">
+
+  <div class="credit-bar">Pictures Credit: Made by Tanmay Singh from MMPS Srinagar</div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <button class="logo" onclick="showPage('home')" style="border:none;background:none;cursor:pointer;">
+        <div class="logo-mark">✚</div>
+        TS <span>Health</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinksContact">
+        <button class="nav-link" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" data-page="about" onclick="showPage('about')">About Us</button>
+        <button class="nav-link" data-page="blog" onclick="showPage('blog')">Wellness Blog</button>
+        <button class="nav-link" data-page="recipes" onclick="showPage('recipes')">Recipes</button>
+        <button class="nav-link" data-page="fitness" onclick="showPage('fitness')">Fitness Hub</button>
+        <button class="nav-link active" data-page="contact" onclick="showPage('contact')">Contact Us</button>
+      </nav>
+      <button class="nav-cta" onclick="showPage('contact')">Get in Touch ↗</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div>
+        <div class="eyebrow" style="color:var(--lime);">Let's connect</div>
+        <h1>We'd love to<br>hear from you.</h1>
+        <p>Have feedback, suggestions, or questions about TS Health? Send us a message.</p>
+      </div>
+      <div class="page-hero-art">💬</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <div class="contact-info">
+        <div class="eyebrow" style="color:var(--lime);">Contact details</div>
+        <h2>Your feedback helps us grow.</h2>
+        <p>Whether you have an idea for a new feature or simply want to say hello, your thoughts are welcome.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="icon">✉</div>
+            <div>
+              <h4>Email us</h4>
+              <p>sarejaheseachaa@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">🌿</div>
+            <div>
+              <h4>Our focus</h4>
+              <p>Accessible wellness and healthy living</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">🕒</div>
+            <div>
+              <h4>Response time</h4>
+              <p>We aim to review messages thoughtfully</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h2>Send us a message</h2>
+        <p>Complete the form below. Your email application will open with your message ready to send.</p>
+
+        <form id="feedbackForm" onsubmit="submitFeedback(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">YOUR NAME</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">YOUR EMAIL</label>
+              <input type="email" id="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">MESSAGE TOPIC</label>
+            <select id="topic">
+              <option value="General Feedback">General Feedback</option>
+              <option value="Website Suggestion">Website Suggestion</option>
+              <option value="Content Request">Content Request</option>
+              <option value="Technical Issue">Technical Issue</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">YOUR MESSAGE</label>
+            <textarea id="message" placeholder="Write your feedback or message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">Open Email & Send Feedback ✉</button>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container" style="background:var(--mint);border-radius:23px;padding:30px;text-align:center;">
+      <h3 style="font-size:20px;margin-bottom:7px;">A healthier community starts with conversation.</h3>
+      <p style="font-size:13px;color:var(--muted);">Thank you for helping us make TS Health more useful and welcoming.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <div class="logo-mark">✚</div>
+          TS <span>Health</span>
+        </div>
+        <p class="footer-about">Simple wellness inspiration for a healthier, more balanced everyday life.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><button onclick="showPage('about')">About Us</button></li>
+          <li><button onclick="showPage('blog')">Wellness Blog</button></li>
+          <li><button onclick="showPage('recipes')">Healthy Recipes</button></li>
+          <li><button onclick="showPage('fitness')">Fitness Hub</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('contact')">Contact Us</button></li>
+          <li><button onclick="showToast('Thank you for visiting TS Health!')">Our Community</button></li>
+          <li><button onclick="showToast('More wellness resources are coming soon!')">Resources</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Stay inspired</h4>
+        <p class="footer-about">Get occasional wellness inspiration in your inbox.</p>
+        <div class="footer-newsletter">
+          <input type="email" id="newsletterEmail" placeholder="Your email">
+          <button onclick="subscribeNewsletter()">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 TS Health. Built for everyday wellness.</span>
+      <span>Made with care · Stay healthy, stay curious.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   TS HEALTH - SINGLE PAGE APPLICATION JAVASCRIPT
+   ========================================================= */
+
+/* ---------- SPA NAVIGATION ---------- */
+
+function showPage(pageId) {
+  const pages = document.querySelectorAll('.page');
+
+  pages.forEach(page => {
+    page.classList.remove('active');
+  });
+
+  const targetPage = document.getElementById(pageId);
+
+  if (targetPage) {
+    targetPage.classList.add('active');
+  }
+
+  // Update active navigation buttons in every header
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.toggle('active', link.dataset.page === pageId);
+  });
+
+  // Close mobile menu
+  document.querySelectorAll('.nav-links').forEach(nav => {
+    nav.classList.remove('open');
+  });
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Update browser URL hash without reloading
+  history.replaceState(null, '', '#' + pageId);
+}
+
+/* Open correct page if URL contains a valid hash */
+function loadPageFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  const validPages = ['home', 'about', 'blog', 'recipes', 'fitness', 'contact'];
+
+  if (validPages.includes(hash)) {
+    showPage(hash);
+  } else {
+    showPage('home');
+  }
+}
+
+/* ---------- MOBILE MENU ---------- */
+
+function toggleMenu() {
+  const navs = document.querySelectorAll('.nav-links');
+  navs.forEach(nav => nav.classList.toggle('open'));
+}
+
+/* ---------- HEALTH TIP GENERATOR ---------- */
+
+const healthTips = [
+  "Drink water regularly throughout the day and keep a bottle nearby as a reminder.",
+  "Add one extra serving of vegetables or fruit to a meal today.",
+  "Take a short movement break after sitting for a long period.",
+  "Try taking five slow, comfortable breaths when you need a mindful pause.",
+  "Aim for a consistent sleep schedule to support your daily energy.",
+  "Enjoy your meals without rushing. Notice the flavours, textures, and how you feel.",
+  "Choose an activity you enjoy—walking, dancing, cycling, or stretching all count as movement.",
+  "Spend a few minutes outdoors if you can. A change of environment can refresh your routine.",
+  "Make your next snack a combination of foods that helps you feel satisfied.",
+  "Be kind to yourself. Healthy habits grow through patience and consistency."
+];
+
+let currentTip = 0;
+
+function newTip() {
+  currentTip = (currentTip + 1) % healthTips.length;
+  const tipElement = document.getElementById('healthTip');
+
+  tipElement.style.opacity = 0;
+
+  setTimeout(() => {
+    tipElement.textContent = healthTips[currentTip];
+    tipElement.style.opacity = 1;
+  }, 180);
+
+  showToast('A fresh wellness tip is ready ✨');
+}
+
+/* ---------- DAILY CHECKLIST ---------- */
+
+function updateChecklist() {
+  const checkboxes = document.querySelectorAll('#dailyChecklist input');
+  const completed = Array.from(checkboxes).filter(box => box.checked).length;
+  const total = checkboxes.length;
+
+  document.getElementById('checkCount').textContent = completed + ' / ' + total;
+
+  checkboxes.forEach(box => {
+    const item = box.closest('li');
+    item.classList.toggle('completed', box.checked);
+  });
+
+  if (completed === total) {
+    showToast('Amazing! You completed your daily wellness check 🎉');
+  }
+}
+
+/* ---------- RECIPE INGREDIENT TOGGLE ---------- */
+
+function toggleIngredients(button) {
+  const ingredients = button.nextElementSibling;
+  const isOpen = ingredients.classList.toggle('show');
+
+  button.textContent = isOpen
+    ? 'Hide ingredients −'
+    : 'View ingredients +';
+}
+
+/* ---------- RECIPE FILTER ---------- */
+
+function filterRecipes(category, clickedButton) {
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  clickedButton.classList.add('active');
+
+  const cards = document.querySelectorAll('.recipe-card');
+
+  cards.forEach(card => {
+    const matches = category === 'all' || card.dataset.category === category;
+    card.style.display = matches ? 'block' : 'none';
+  });
+}
+
+/* ---------- FITNESS ROUTINES ---------- */
+
+function startWorkout(button) {
+  const card = button.closest('.workout-card');
+  const isStarted = card.classList.toggle('started');
+
+  if (isStarted) {
+    button.textContent = 'Routine selected ✓';
+    showToast('Routine selected! Move at a comfortable pace.');
+  } else {
+    button.textContent = 'Start routine →';
+  }
+}
+
+/* ---------- FITNESS TRACKER ---------- */
+
+let sessions = 0;
+const maxSessions = 5;
+
+function changeSessions(amount) {
+  sessions += amount;
+
+  if (sessions < 0) sessions = 0;
+  if (sessions > maxSessions) sessions = maxSessions;
+
+  document.getElementById('sessionCount').textContent = sessions;
+  document.getElementById('progressFill').style.width = (sessions / maxSessions * 100) + '%';
+
+  if (sessions === maxSessions) {
+    showToast('You reached your weekly movement goal! 🎉');
+  }
+}
+
+function resetSessions() {
+  sessions = 0;
+  document.getElementById('sessionCount').textContent = '0';
+  document.getElementById('progressFill').style.width = '0%';
+  showToast('Movement tracker reset.');
+}
+
+/* ---------- CONTACT FEEDBACK FORM ---------- */
+
+function submitFeedback(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const topic = document.getElementById('topic').value;
+  const message = document.getElementById('message').value.trim();
+  const formMessage = document.getElementById('formMessage');
+
+  if (!name || !email || !message) {
+    formMessage.textContent = 'Please complete all required fields.';
+    formMessage.classList.add('show');
+    return;
+  }
+
+  const recipient = 'sarejaheseachaa@gmail.com';
+  const subject = encodeURIComponent('TS Health Feedback - ' + topic);
+
+  const body = encodeURIComponent(
+    'Hello TS Health Team,\n\n' +
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Topic: ' + topic + '\n\n' +
+    'Message:\n' + message + '\n\n' +
+    'Sent through the TS Health website.'
+  );
+
+  const mailtoLink = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+
+  // Open the user's default email client
+  window.location.href = mailtoLink;
+
+  formMessage.textContent = 'Your email application should now open with the message prepared. Please click Send in your email app.';
+  formMessage.classList.add('show');
+
+  showToast('Feedback message prepared ✉');
+}
+
+/* ---------- BLOG ARTICLE INTERACTION ---------- */
+
+function readArticle(articleName) {
+  showToast('“' + articleName + '” article selected. Full articles are coming soon!');
+}
+
+/* ---------- NEWSLETTER ---------- */
+
+function subscribeNewsletter() {
+  const input = document.getElementById('newsletterEmail');
+  const email = input.value.trim();
+
+  if (!email || !email.includes('@')) {
+    showToast('Please enter a valid email address.');
+    return;
+  }
+
+  input.value = '';
+  showToast('Thank you! You are subscribed to wellness inspiration 🌿');
+}
+
+/* ---------- TOAST NOTIFICATIONS ---------- */
+
+let toastTimer;
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3500);
+}
+
+/* ---------- INITIALIZATION ---------- */
+
+window.addEventListener('load', loadPageFromHash);
+
+window.addEventListener('hashchange', loadPageFromHash);
+</script>
+
+</body>
+</html>
